@@ -65,28 +65,27 @@ E: The repository 'http://mirrors.aliyun.com/ubuntu focal InRelease' is not sign
 
 # 必备软件
 
-| 软件名                | 作用                                                | 优先级 |
-| --------------------- | --------------------------------------------------- | ------ |
-| vim                   | 编辑文本                                            | ⭐⭐⭐⭐⭐  |
-| net-tools             | ifconfig命令                                        | ⭐⭐⭐⭐   |
-| openssh-server        | ssh服务                                             | ⭐⭐⭐⭐   |
-| language-pack-zh-hans | 系统就知道zh_CN.UTF-8了，这个时候用perl就不会报错了 | ⭐⭐⭐⭐   |
-| inputils-ping         | ping命令                                            | ⭐⭐⭐⭐   |
-| kmod                  | lsmod insmod等操作                                  | ⭐⭐⭐⭐   |
-| usbutils              | lsusb等操作                                         | ⭐⭐⭐⭐   |
-| netplan.io            | ubtuntu网络配置，systemd相关                        | ⭐⭐⭐⭐   |
-| udev                  |                                                     | ⭐⭐⭐⭐⭐  |
-| lrzsz                 | rz，xshell透传                                      | ⭐⭐⭐    |
-| （以下是level-1）     |                                                     |        |
-| psmisc                | killall命令                                         | ⭐⭐⭐    |
+| 软件名                       | 作用                                                | 优先级 |
+| ---------------------------- | --------------------------------------------------- | ------ |
+| vim                          | 编辑文本                                            | ⭐⭐⭐⭐⭐  |
+| sudo                         |                                                     | ⭐⭐⭐⭐⭐  |
+| net-tools                    | ifconfig命令                                        | ⭐⭐⭐⭐   |
+| openssh-server               | ssh服务                                             | ⭐⭐⭐⭐   |
+| language-pack-zh-hans        | 系统就知道zh_CN.UTF-8了，这个时候用perl就不会报错了 | ⭐⭐⭐⭐   |
+| inputils-ping/inetutils-ping | ping命令                                            | ⭐⭐⭐⭐   |
+| kmod                         | lsmod insmod等操作                                  | ⭐⭐⭐⭐   |
+| usbutils                     | lsusb等操作                                         | ⭐⭐⭐⭐   |
+| netplan.io                   | ubtuntu网络配置，systemd相关                        | ⭐⭐⭐⭐   |
+| udev                         |                                                     | ⭐⭐⭐⭐⭐  |
+| lrzsz                        | rz，xshell透传                                      | ⭐⭐⭐    |
+| （以下是level-1）            |                                                     |        |
+| psmisc                       | killall命令                                         | ⭐⭐⭐    |
 
 烧录后发现，问题及解决方式：
 
 [a start job is running for dev-ttyFIQ0.device问题 - Firefly-RK3399 - Firefly开源社区a start job is running for dev-ttyFIQ0.device问题 (t-firefly.com)](https://dev.t-firefly.com/thread-52761-1-1.html)
 
-
-
-
+可以添加一个普通用户develop
 
 # 了解systemd
 

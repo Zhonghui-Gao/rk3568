@@ -6,18 +6,21 @@
 
 管理配置文件
 
-| 命令                                          | 说明                                   |
-| --------------------------------------------- | -------------------------------------- |
-| /etc/systemd/resolved.conf                    | 网络配置相关，包括dns                  |
-| systemctl restart systemd-resolved.service    | 重启上面这个服务                       |
-| route add default gw 192.168.x.1              | 网关配置                               |
-| sudo rsync -avx firefly@192.168.1.11:/ rootfs | 同步文件夹                             |
-| stty -F /dev/ttyS1                            | 查看串口属性                           |
-| stty -F /dev/ttyS1 speed 115200               | 设置串口波特率115200，一般会输出115200 |
-| echo "123" > /dev/ttyS1                       | 写串口                                 |
-| cat /dev/ttyS1输出                            | 输出串口                               |
-| cat /dev/ttyS1 > output.txt                   | 输出串口内容到文本                     |
-| cat /proc/bus/input/devices                   | 打印input设备                          |
+| 命令                                             | 说明                                   |
+| ------------------------------------------------ | -------------------------------------- |
+| /etc/systemd/resolved.conf                       | 网络配置相关，包括dns                  |
+| systemctl restart systemd-resolved.service       | 重启上面这个服务                       |
+| route add default gw 192.168.x.1                 | 网关配置                               |
+| sudo rsync -avx firefly@192.168.1.11:/ rootfs    | 同步文件夹                             |
+| stty -F /dev/ttyS1                               | 查看串口属性                           |
+| stty -F /dev/ttyS1 speed 115200                  | 设置串口波特率115200，一般会输出115200 |
+| echo "123" > /dev/ttyS1                          | 写串口                                 |
+| cat /dev/ttyS1输出                               | 输出串口                               |
+| cat /dev/ttyS1 > output.txt                      | 输出串口内容到文本                     |
+| cat /proc/bus/input/devices                      | 打印input设备                          |
+| ethtool -s eth0 speed 100 duplex full autoneg on | ethtool切换网卡百兆自协商              |
+
+
 
 | 删除的软件        |        |                        |
 | ----------------- | ------ | ---------------------- |
@@ -53,5 +56,28 @@ ffmpeg -vcodec bmp -i fb.bmp -vcodec rawvideo -f rawvideo -pix_fmt rgb32 fb.raw
  
 # bmp -> rgb565
 ffmpeg -vcodec bmp -i fb.bmp -vcodec rawvideo -f rawvideo -pix_fmt rgb565 fb.raw
+```
+
+
+
+
+
+## 显示类
+
+```bash
+root@jammer-master:~# modetest -M rockchip -e
+Encoders:
+id	crtc	type	possible crtcs	possible clones	
+147	0	Virtual	0x00000001	0x00000000
+149	71	LVDS	0x00000001	0x00000000
+
+root@jammer-master:~# modetest -M rockchip -c | grep LVDS
+150	149	connected	LVDS-1         	0x0		1	149
+```
+
+显示一个彩色条纹，同时测试频率
+
+```bash
+modetest -M rockchip -s 150@71:1024x600 -v
 ```
 
